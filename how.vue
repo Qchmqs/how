@@ -1,18 +1,25 @@
 <template>
     <div class="p-4 grid row-4 gap-4">
-      <div v-for="array in array" :key="array.id" class="p-2 border-2 rounded-lg">
-        <h1>{{array.name}}</h1>
-        <h1>age : {{array.age}}</h1>
+      <div v-for="user in users" :key="array.id" class="p-2 border-2 rounded-lg">
+        <h1>{{user.name}}</h1>
+        <h1>age : {{user.age}}</h1>
       </div>
     </div>
 </template>
 <script>
+import _ from 'lodash'
 export default {
   name: "How",
   components: {},
   data() {
     return {
-      array : [
+      array : 
+    };
+  },
+  methods: {},
+  computed:{
+    users() {
+        const arr = [
         {
           name : "Adam",
           age : 19,
@@ -38,9 +45,8 @@ export default {
           age : 26
         },
       ]
-    };
+      return _.sortBy(users, ['age'])
+    }
   },
-  methods: {},
-  computed:{},
 };
 </script>
