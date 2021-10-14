@@ -44,7 +44,7 @@ export default {
           age : 26
         },
       ]
-      return _.sortBy(users, ['age'])
+      return _.sortBy(arr, ['age'])
     }
   },
 };
